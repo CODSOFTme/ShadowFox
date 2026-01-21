@@ -1,9 +1,2 @@
-ShadowFox/
-|
-|---BEGGINER/
-|   ---EnhancedCalculator/
-|      ---Clculator.java
-|
-|---README.md
-
-
+#ShadowFox
+java development internship tasks
