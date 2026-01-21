@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+// Contact class (NO main method here)
 class Contact {
     String name;
     String phone;
@@ -13,7 +14,8 @@ class Contact {
     }
 }
 
-public class ContactManager {
+// Main class (Program starts here)
+public class Main {
 
     static ArrayList<Contact> contacts = new ArrayList<>();
     static Scanner sc = new Scanner(System.in);
@@ -34,21 +36,35 @@ public class ContactManager {
             sc.nextLine(); // clear buffer
 
             switch (choice) {
-                case 1 -> addContact();
-                case 2 -> viewContacts();
-                case 3 -> updateContact();
-                case 4 -> deleteContact();
-                case 5 -> System.out.println("Exiting Contact Manager. Thank you!");
-                default -> System.out.println("Invalid choice!");
+                case 1:
+                    addContact();
+                    break;
+                case 2:
+                    viewContacts();
+                    break;
+                case 3:
+                    updateContact();
+                    break;
+                case 4:
+                    deleteContact();
+                    break;
+                case 5:
+                    System.out.println("Exiting Contact Manager. Thank you!");
+                    break;
+                default:
+                    System.out.println("Invalid choice!");
             }
+
         } while (choice != 5);
     }
 
     static void addContact() {
         System.out.print("Enter name: ");
         String name = sc.nextLine();
+
         System.out.print("Enter phone number: ");
         String phone = sc.nextLine();
+
         System.out.print("Enter email: ");
         String email = sc.nextLine();
 
@@ -80,8 +96,10 @@ public class ContactManager {
         if (index >= 0 && index < contacts.size()) {
             System.out.print("Enter new name: ");
             contacts.get(index).name = sc.nextLine();
+
             System.out.print("Enter new phone: ");
             contacts.get(index).phone = sc.nextLine();
+
             System.out.print("Enter new email: ");
             contacts.get(index).email = sc.nextLine();
 
